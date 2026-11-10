@@ -1,0 +1,23 @@
+&EN
+
+#{"n8media bench"},(0xE4E4700B),1,0,3
+
+%{"Field Ops"}
+:"Field Ops"
+
+[0x20022e6d], 0, 0, 0, {"S60ProductID"}
+
+"$(epocroot)\epoc32\release\$(platform)\$(target)\n8mbench.exe" -"!:\sys\bin\n8mbench.exe"
+"$(epocroot)\epoc32\release\$(platform)\$(target)\n8mlaunch.exe" -"!:\sys\bin\n8mlaunch.exe"
+"$(epocroot)\epoc32\data\z\resource\apps\n8mlaunch.rsc" -"!:\resource\apps\n8mlaunch.rsc"
+"$(epocroot)\epoc32\data\z\private\10003a3f\import\apps\n8mlaunch_reg.rsc" -"!:\private\10003a3f\import\apps\n8mlaunch_reg.rsc"
+
+"..\test\clips\mpeg4-aac.mp4"          -"E:\n8media\clips\mpeg4-aac.mp4"
+"..\test\clips\mpeg4-640.mp4"          -"E:\n8media\clips\mpeg4-640.mp4"
+"..\test\clips\h264-baseline-aac.mp4"  -"E:\n8media\clips\h264-baseline-aac.mp4"
+"..\test\clips\h264-main-aac.mp4"      -"E:\n8media\clips\h264-main-aac.mp4"
+"..\test\clips\h263-aac.3gp"           -"E:\n8media\clips\h263-aac.3gp"
+"..\test\clips\mjpeg-mp3.avi"          -"E:\n8media\clips\mjpeg-mp3.avi"
+"..\test\clips\mpeg4-mp3-rot90.mp4"    -"E:\n8media\clips\mpeg4-mp3-rot90.mp4"
+"..\test\clips\h264-aac.ts"            -"E:\n8media\clips\h264-aac.ts"
+"..\test\clips\amrnb-4.75k.3gp"        -"E:\n8media\clips\amrnb-4.75k.3gp"

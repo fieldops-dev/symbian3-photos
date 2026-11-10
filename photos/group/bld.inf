@@ -1,0 +1,6 @@
+prj_platforms
+GCCE
+
+prj_mmpfiles
+gnumakefile n8photos_icons.mk
+n8photos.mmp

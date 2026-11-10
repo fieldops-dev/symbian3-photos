@@ -1,0 +1,8 @@
+PRJ_PLATFORMS
+GCCE
+
+PRJ_MMPFILES
+n8media.mmp
+n8mediafp.mmp
+n8mbench.mmp
+n8mlaunch.mmp

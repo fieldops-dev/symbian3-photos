@@ -1,0 +1,14 @@
+#include <appinfo.rh>
+#include <n8photos.rsg>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xE4E47003
+
+RESOURCE APP_REGISTRATION_INFO
+    {
+    app_file = "n8photos";
+    localisable_resource_file = "\\resource\\apps\\n8photos";
+    localisable_resource_id = R_PHOTOS_LOCALISABLE_APP_INFO;
+    embeddability = KAppNotEmbeddable;
+    newfile = KAppDoesNotSupportNewFile;
+    }

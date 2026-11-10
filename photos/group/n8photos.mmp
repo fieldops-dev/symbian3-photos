@@ -1,0 +1,49 @@
+TARGET          n8photos.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE4E47003
+SECUREID        0xE4E47003
+VENDORID        0
+CAPABILITY      LocalServices NetworkServices ReadUserData WriteUserData
+EPOCSTACKSIZE   0x10000
+EPOCHEAPSIZE    0x100000 0x4000000
+
+SOURCEPATH      ../src
+SOURCE          photosapp.cpp photosappui.cpp photosview.cpp viewer.cpp gridlayout.cpp
+SOURCE          library.cpp scanner.cpp exif.cpp decoder.cpp thumbs.cpp worker.cpp
+SOURCE          glrenderer.cpp labels.cpp icons.cpp physics.cpp trace.cpp
+SOURCE          actions.cpp moves.cpp mp4.cpp video.cpp iconshapes.cpp iconbake.cpp
+SOURCE          softvideo.cpp avsync.cpp n8mlog.cpp texcodec.cpp fontmetrics.cpp labelworker.cpp spinner.cpp
+
+#ifdef N8MEDIA_STUB
+SOURCE          n8mstub.c
+USERINCLUDE     ../stub
+#else
+USERINCLUDE     ../../ffmpeg-symbian/inc
+STATICLIBRARY   n8media.lib n8mediafp.lib
+LIBRARY         libm.lib
+#endif
+
+SOURCEPATH      ../data
+START RESOURCE  n8photos.rss
+HEADER
+TARGETPATH      /resource/apps
+END
+START RESOURCE  n8photos_reg.rss
+TARGETPATH      /private/10003a3f/import/apps
+END
+
+USERINCLUDE     ../inc
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/mw
+SYSTEMINCLUDE   /epoc32/include/platform
+SYSTEMINCLUDE   /epoc32/include/platform/mw
+SYSTEMINCLUDE   /epoc32/include/stdapis
+
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib avkon.lib eikcoctl.lib eikdlg.lib efsrv.lib estor.lib bafl.lib
+LIBRARY         fbscli.lib bitgdi.lib gdi.lib ws32.lib hal.lib charconv.lib
+LIBRARY         imageconversion.lib sendui.lib apgrfx.lib
+LIBRARY         mediaclientvideo.lib commonui.lib apmime.lib
+LIBRARY         mediaclientaudiostream.lib remconcoreapi.lib remconinterfacebase.lib libc.lib
+LIBRARY         libglesv2.lib libegl.lib touchfeedback.lib
+
+LANG            SC

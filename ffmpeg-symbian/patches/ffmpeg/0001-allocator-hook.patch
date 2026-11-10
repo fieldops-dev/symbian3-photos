@@ -1,0 +1,24 @@
+--- a/libavutil/mem.c
++++ b/libavutil/mem.c
+@@ -61,6 +61,21 @@
+ 
+ #include "mem_internal.h"
+ 
++#ifdef N8M_ALLOC_HOOK
++/* n8media: every allocation goes through the app's allocator (n8m_set_allocator). The phone has no memalign, and
++ * the Mac host build takes the same plain-malloc path so the two behave alike. */
++#include "n8m_alloc.h"
++#undef HAVE_POSIX_MEMALIGN
++#undef HAVE_ALIGNED_MALLOC
++#undef HAVE_MEMALIGN
++#define HAVE_POSIX_MEMALIGN 0
++#define HAVE_ALIGNED_MALLOC 0
++#define HAVE_MEMALIGN 0
++#define malloc  n8m_hook_malloc
++#define realloc n8m_hook_realloc
++#define free    n8m_hook_free
++#endif
++
+ #define ALIGN (HAVE_AVX512 ? 64 : (HAVE_AVX ? 32 : 16))
+ 
+ /* NOTE: if you want to override these functions with your own

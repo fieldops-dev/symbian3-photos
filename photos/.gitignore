@@ -1,0 +1,13 @@
+.DS_Store
+
+*.zip
+*.sis
+*.sisx
+*.key
+*.cer
+*.pem
+*.ttf
+group/ABLD.BAT
+group/abld.bat
+build/
+test/out/

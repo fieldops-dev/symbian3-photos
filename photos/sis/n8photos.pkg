@@ -1,0 +1,19 @@
+&EN
+
+#{"Photos"},(0xE4E47003),1,0,32
+
+%{"Field Ops"}
+:"Field Ops"
+
+[0x20022e6d], 0, 0, 0, {"S60ProductID"}
+
+"$(epocroot)\epoc32\release\$(platform)\$(target)\n8photos.exe" -"!:\sys\bin\n8photos.exe"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos.rsc" -"!:\resource\apps\n8photos.rsc"
+"$(epocroot)\epoc32\data\z\private\10003a3f\import\apps\n8photos_reg.rsc" -"!:\private\10003a3f\import\apps\n8photos_reg.rsc"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_aif.mif" -"!:\resource\apps\n8photos_aif.mif"
+
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_fonts\NPHeadlineBold.ttf" -"!:\resource\apps\n8photos_fonts\NPHeadlineBold.ttf"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_fonts\N9TextBd.ttf" -"!:\resource\apps\n8photos_fonts\N9TextBd.ttf"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_fonts\N9TextTBd.ttf" -"!:\resource\apps\n8photos_fonts\N9TextTBd.ttf"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_fonts\N9TextTRg.ttf" -"!:\resource\apps\n8photos_fonts\N9TextTRg.ttf"
+"$(epocroot)\epoc32\data\z\resource\apps\n8photos_fonts\N9TextRg.ttf" -"!:\resource\apps\n8photos_fonts\N9TextRg.ttf"

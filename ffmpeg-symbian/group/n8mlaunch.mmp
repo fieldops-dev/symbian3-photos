@@ -1,0 +1,27 @@
+TARGET          n8mlaunch.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE4E4700B
+SECUREID        0xE4E4700B
+VENDORID        0
+CAPABILITY      NONE
+
+SOURCEPATH      ../launcher
+SOURCE          n8mlaunch.cpp
+
+SOURCEPATH      ../data
+START RESOURCE  n8mlaunch.rss
+HEADER
+TARGETPATH      /resource/apps
+END
+START RESOURCE  n8mlaunch_reg.rss
+TARGETPATH      /private/10003a3f/import/apps
+END
+
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/mw
+SYSTEMINCLUDE   /epoc32/include/platform
+SYSTEMINCLUDE   /epoc32/include/platform/mw
+
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+
+LANG            SC

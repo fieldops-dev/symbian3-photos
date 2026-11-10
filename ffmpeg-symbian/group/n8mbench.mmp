@@ -1,0 +1,22 @@
+TARGET          n8mbench.exe
+TARGETTYPE      exe
+UID             0 0xE4E4700C
+CAPABILITY      NONE
+VENDORID        0
+
+EPOCSTACKSIZE   0x20000
+EPOCHEAPSIZE    0x100000 0x3000000
+
+SOURCEPATH      ../bench
+SOURCE          n8mbench.cpp
+
+USERINCLUDE     ../inc
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/stdapis
+
+STATICLIBRARY   n8media.lib
+STATICLIBRARY   n8mediafp.lib
+STATICLIBRARY   libcrt0.lib
+LIBRARY         euser.lib
+LIBRARY         libc.lib
+LIBRARY         libm.lib

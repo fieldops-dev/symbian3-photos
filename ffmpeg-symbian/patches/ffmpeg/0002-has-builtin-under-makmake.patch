@@ -1,0 +1,11 @@
+--- a/libavutil/attributes.h
++++ b/libavutil/attributes.h
+@@ -34,7 +34,7 @@
+ #    define AV_GCC_VERSION_AT_MOST(x,y)  0
+ #endif
+ 
+-#ifdef __has_builtin
++#if defined(__has_builtin) && defined(__GNUC__)
+ #    define AV_HAS_BUILTIN(x) __has_builtin(x)
+ #else
+ #    define AV_HAS_BUILTIN(x) 0

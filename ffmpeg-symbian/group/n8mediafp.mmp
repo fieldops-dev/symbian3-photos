@@ -1,0 +1,20 @@
+TARGET          n8mediafp.lib
+TARGETTYPE      lib
+UID             0
+ALWAYS_BUILD_AS_ARM
+
+OPTION GCCE     -w -fno-strict-aliasing -fno-math-errno -fno-signed-zeros -fno-tree-vectorize -fomit-frame-pointer
+OPTION GCCE     -DCLOCKS_PER_SEC=1000000
+OPTION GCCE     -mfpu=vfpv2
+OPTION_REPLACE  GCCE -msoft-float -mfloat-abi=softfp
+OPTION_REPLACE  GCCE -march=armv5t -march=armv5te
+MACRO           HAVE_AV_CONFIG_H N8M_ALLOC_HOOK _ISOC99_SOURCE _FILE_OFFSET_BITS=64 _LARGEFILE_SOURCE
+
+#include "ffmpeg_paths.mmph"
+
+USERINCLUDE     ../inc
+USERINCLUDE     ../src
+SYSTEMINCLUDE   /epoc32/include/stdapis
+SYSTEMINCLUDE   /epoc32/include
+
+#include "ffmpeg_sources_fp.mmph"

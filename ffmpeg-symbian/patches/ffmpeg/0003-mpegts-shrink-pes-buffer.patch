@@ -1,0 +1,13 @@
+--- a/libavformat/mpegts.c
++++ b/libavformat/mpegts.c
+@@ -1002,6 +1002,10 @@
+ 
+     av_packet_unref(pkt);
+ 
++    /* n8media: a video PES of unknown length gets a MAX_PES_PAYLOAD (200 KB) buffer; every packet probed or
++     * queued kept all of it, 20 MB for a 240 KB clip on the phone. Give the packet only what it holds. */
++    if (pes->buffer->size > pes->data_index + AV_INPUT_BUFFER_PADDING_SIZE + 4096)
++        av_buffer_realloc(&pes->buffer, pes->data_index + AV_INPUT_BUFFER_PADDING_SIZE);
+     pkt->buf  = pes->buffer;
+     pkt->data = pes->buffer->data;
+     pkt->size = pes->data_index;
